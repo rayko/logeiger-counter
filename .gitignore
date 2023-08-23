@@ -1,0 +1,13 @@
+.bundle
+.watchr
+.redcar
+.project
+log/*.log*
+*.log
+tmp/*
+.idea/
+*~
+*#*#*
+.DS_Store
+.byebug_history
+

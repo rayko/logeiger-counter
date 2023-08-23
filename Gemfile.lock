@@ -1,0 +1,17 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ffi (1.15.5)
+    gosu (1.4.6)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+
+PLATFORMS
+  x86_64-linux
+
+DEPENDENCIES
+  gosu
+  rb-inotify
+
+BUNDLED WITH
+   2.4.10
