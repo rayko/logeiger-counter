@@ -44,7 +44,7 @@ And watch `local.log` with the previous command.
 
 # Why?
 
-I think this is cool. Might be useful if you're a multitasking person and want to keep watch on a log as you
+I think it's fun. Might be useful if you're a multitasking person and want to keep watch on a log as you
 work instead of looking at it. I also like geiger counters.
 
 # Notes
