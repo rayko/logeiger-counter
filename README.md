@@ -7,12 +7,10 @@ Watches a provided file for changes, prints output to console and plays a sound 
 Clone the repo:
 
 ```
-$ git clone <pending>
+$ git clone https://github.com/rayko/logeiger-counter.git
 ```
 
-Install Ruby:
-
-Ruby 3.2.2 via RVM, rbenv or system package and Bundler.
+Install Ruby 3.2.2 via RVM, rbenv or system package and Bundler with `gem install bundler`.
 
 Gosu dependencies:
 
@@ -26,9 +24,9 @@ This thing dependencies:
 $ bundle install
 ```
 
-This thing was meant to be used with log files or pretty much any kind, like Rails logs, system logs, etc.
+This thing was meant to be used with log files of pretty much any kind, like Rails logs, system logs, etc.
 
-To run it just run:
+To run it:
 
 ```
 $ ruby watch_file.rb path/to/log.log
