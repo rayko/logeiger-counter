@@ -2,8 +2,15 @@ require "gosu"
 require 'rb-inotify'
 require 'yaml'
 
-configs = nil
-configs = YAML.load_file('config.yml') if File.exist?('config.yml')
+config = {}
+config = YAML.load_file('config.yml') if File.exist?('config.yml')
+
+puts 'Configuration:'
+puts config.inspect
+
+puts "\nSounds found:"
+Dir["#{config[:sounds_dir]}/*.wav"].each { |snd| puts "- #{snd}" }
+puts ''
 
 filename = ARGV[0]
 
@@ -15,7 +22,7 @@ end
 
 @snds = []
 
-Dir["#{configs[:sounds_dir]}/*.wav"].each do |snd|
+Dir["#{config[:sounds_dir]}/*.wav"].each do |snd|
   @snds << Gosu::Sample.new(snd)
 end
 
