@@ -1,5 +1,9 @@
 require "gosu"
 require 'rb-inotify'
+require 'yaml'
+
+configs = nil
+configs = YAML.load_file('config.yml') if File.exist?('config.yml')
 
 filename = ARGV[0]
 
@@ -10,9 +14,10 @@ if filename.nil? || filename == ''
 end
 
 @snds = []
-@snds << Gosu::Sample.new('sounds/click.wav')
-@snds << Gosu::Sample.new('sounds/click2.wav')
-@snds << Gosu::Sample.new('sounds/click3.wav')
+
+Dir["#{configs[:sounds_dir]}/*.wav"].each do |snd|
+  @snds << Gosu::Sample.new(snd)
+end
 
 open(filename) do |file|
   file.read
@@ -21,7 +26,7 @@ open(filename) do |file|
     file.read.split("\n").each do |line| 
       puts line
     end
-    @snds.shuffle.first.play(0.3)
+    @snds.shuffle.first.play(0.3) unless @snds.empty?
   end
   queue.run
 end
